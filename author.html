@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Paper Submission</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        footer {
+            background: #1e1e1e;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 4rem 0;
+            /* width: 100%; */
+            margin: -20px;
+            /* box-sizing: border-box; */
+        }
+
+        .footer-container {
+            max-width: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 2rem 5%;
+            box-sizing: border-box;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-title {
+
+            color: white;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: bold;
+
+        }
+
+        .footer-title::after {
+            content: '';
+            width: 90px;
+            height: 4px;
+            background: yellow;
+            display: block;
+            margin: 8px 0;
+            margin-left: 4px;
+        }
+
+        .footer-text {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            font-size: 1rem;
+            padding: 5px 0;
+        }
+
+        .footer-links a:hover {
+            color: #f44336;
+        }
+
+        .footer-social a {
+            margin: 0 10px;
+            color: #ccc;
+            font-size: 1.5rem;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        .footer-social a:hover {
+            color: #f44336;
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Ensure no margins or padding on body/html affect the footer */
+        /* html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+    } */
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: #1a237e;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        /* Logo and Header Area */
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: white;
+        }
+
+        .logo-text-area {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1a237e;
+            margin-right: 20px;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: #f44336;
+        }
+
+        .subtitle {
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .subtitle span {
+            line-height: 1.3;
+        }
+
+        .logo-images {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .logo-images img {
+            height: 60px;
+        }
+
+        /* Header Line */
+        .headerline {
+            width: 100%;
+            line-height: 0;
+            height: 6px;
+            background: linear-gradient(to right, #ff9800, #4caf50, #2196f3, #e91e63);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #09021a !important;
+            padding: 0;
+        }
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        .navbar-nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar-nav .nav-item {
+            position: relative;
+        }
+
+        /* Navbar Hover Effect */
+        .navbar-nav .nav-link {
+            color: white !important;
+            padding: 15px 20px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: white;
+            color: black !important;
+            border-radius: 5px;
+        }
+
+        /* Dropdown Hover Effect */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease-in-out;
+            background-color: white;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            padding: 0;
+        }
+
+        .dropdown-item {
+            padding: 10px 15px;
+            font-size: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #33a3ff;
+            color: white;
+        }
+
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Content Sections */
+        .section {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .section-title {
+            background: #003366;
+            color: white;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .section-content {
+            padding: 15px;
+            background: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .logo-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo-text-area {
+                margin-bottom: 20px;
+                text-align: center;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                text-align: center;
+            }
+
+            .logo-images {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        I-LIPS 2025 - December 12-14, 2025 - JECRC Foundation, Jaipur
+    </div>
+
+    <!-- Logo Container -->
+    <div class="logo-container">
+        <div class="logo-text-area">
+            <div class="logo">I-LIPS <span>2025</span></div>
+            <div class="subtitle">
+                <span>12th International Library Information Professional Summit</span>
+                <span>Innovative Technologies in Librarianship: Challenges and Opportunities</span>
+            </div>
+        </div>
+        <div class="logo-images">
+            <img src="/images/3.png" alt="JECRC Foundation">
+            <img src="/images/2.png" alt="25 Years">
+            <img src="/images/4.png" alt="JMCH">
+        </div>
+    </div>
+
+    <!-- Header Line -->
+    <div class="headerline"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="About.html">About JECRC</a></li>
+                            <li><a class="dropdown-item" href="vene.html">Venue</a></li>
+                            <li><a class="dropdown-item" href="aim.html">Aim & Objectives</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="authorsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Authors
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="call.html">Call for Papers</a></li>
+                            <li><a class="dropdown-item" href="author.html">Author Guidelines & Submission</a></li>
+                            <li><a class="dropdown-item" href="registration.html">Registration Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="committeesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Committees
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Conference organizer & Boards</a></li>
+                            <li><a class="dropdown-item" href="advisory.html">Advisory Chairs</a></li>
+                            <li><a class="dropdown-item" href="patron.html">Patron/General Chair</a></li>
+                            <li><a class="dropdown-item" href="pcchair.html">PC Chairs Convenor</a></li>
+                            <li><a class="dropdown-item" href="organising.html">Organizing Secretary/Co Convernor/CO
+                                    Organising Secretary</a></li>
+                            <li><a class="dropdown-item" href="committee.html">Organizing Committee</a></li>
+                            <li><a class="dropdown-item" href="national.html">National Program Committee</a></li>
+                            <li><a class="dropdown-item" href="internationl.html">International Program Committee</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="inviteesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Invitees
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="eminent-guest.html">Eminent Guest</a></li>
+                            <li><a class="dropdown-item" href="#">Special Invitees</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="track.html">Conference Tracks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="program.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Keynote Speakers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactus.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="section">
+            <div class="section-title">PAPER SUBMISSION</div>
+            <div class="section-content">
+                Please submit original research articles, research surveys, case studies, or action plans related to the
+                core theme of the conference by email to <span class="bold">icetsl@jecrc.ac.in</span>. The chosen papers
+                will be published in book format by a renowned publisher with ISBN. I-LIPS 2025 participants may get the
+                book at a discounted rate of Rs. 500/-, and the price for others is Rs. 1000/-. Selected papers will be
+                published in UGC Care-listed/Scopus-indexed journals.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">AUTHOR GUIDELINES</div>
+            <div class="section-content">
+                <p class="bold">The papers must be submitted in accordance with the specified formats:</p>
+                <p>The paper's word count must fall between 3000 and 5000 words. It is required that all papers be typed
+                    using Microsoft Word, utilizing the Times New Roman font with a font size of 12 pt. The recommended
+                    paper size is A4, in portrait orientation, measuring 8.5 inches by 11 inches. The document should
+                    have a line spacing of 1.5 with margins of 1 inch on the top, bottom, and right sides, and 1.5
+                    inches on the left side.</p>
+                <p class="bold">Headings and subheadings should be formatted in strong font, aligned to the left margin,
+                    and numbered based on their hierarchical level as follows:</p>
+                <ul>
+                    <li>1. Heading at the first level</li>
+                    <li>1.1 Subheading</li>
+                    <li>1.1.1 Heading at the third level</li>
+                </ul>
+                <ul>
+                    <li>The report should include appropriately numbered and described figures, charts, pictures, and
+                        tables.</li>
+                    <li>The main title should be immediately followed by the writers' names, affiliations, addresses,
+                        and email IDs.</li>
+                    <li>The abstract must not exceed 200 words and should be written in <span
+                            class="italic">italics</span>.</li>
+                    <li>A minimum of five keywords must be included following the abstract, highlighted in <span
+                            class="highlight">bold</span>.</li>
+                    <li>Each paper submission must include a single passport-sized color photograph of the author(s)
+                        along with a concise curriculum vitae.</li>
+                    <li>The references or bibliographies should be cited according to the APA format recommended by the
+                        American Psychological Association.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">LAST DATE OF PAPER SUBMISSION</div>
+            <div class="section-content">
+                The deadline for paper submissions is <span class="bold">September 30, 2025</span>. Papers accepted with
+                modifications should be confirmed with registration fees by <span class="bold">October 10, 2025</span>.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h2 class="footer-title">About the Conference</h2>
+                    <p class="footer-text">Join us for an unforgettable experience featuring industry leaders,
+                        thought-provoking discussions, and unparalleled networking opportunities.</p>
+                </div>
+                <div class="footer-section">
+                    <h2 class="footer-title">Quick Links</h2>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="program.html">Schedule</a>
+                        <a href="speaker.html">Speakers</a>
+                        <a href="#">Sponsors</a>
+                        <a href="contactus.html">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h2 class="footer-title">Contact Us</h2>
+                    <p class="footer-text">📧 Email: icetsl@jecrc.ac.in</p>
+                    <p class="footer-text">📞 Phone: +91 9829230353, +91 7976196689</p>
+                    <p class="footer-text">📍 Location: JECRC Foundation, Jaipur, Rajasthan</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p>&copy; 2024 Conference Name. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

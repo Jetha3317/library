@@ -1,0 +1,618 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Leadership Team</title> -->
+    <!-- <link rel="stylesheet" href="footer.css"> -->
+    <!-- <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        .top-bar {
+            background-color: #1a237e;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        /* Header with Logo */
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-text-area {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1a237e;
+            margin-right: 20px;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: #f44336;
+        }
+
+        .subtitle {
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .subtitle span {
+            line-height: 1.3;
+        }
+
+        .logo-images {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .logo-images img {
+            height: 60px;
+        }
+
+        /* Header Line */
+        .headerline {
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, #ff9800, #4caf50, #2196f3, #e91e63);
+            margin-bottom: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #09021a !important;
+            padding: 0;
+        }
+
+        .navbar-nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar-nav .nav-item {
+            position: relative;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            padding: 15px 20px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: white;
+            color: black !important;
+            border-radius: 5px;
+        }
+
+        /* Dropdown styling */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease-in-out;
+            background-color: white;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            padding: 0;
+        }
+
+        .dropdown-item {
+            padding: 10px 15px;
+            font-size: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #33a3ff;
+            color: white;
+        }
+
+        /* Main content */
+        .main-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1a237e;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background: #1a237e;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        tr:hover {
+            background: #d1e7fd;
+            transition: 0.3s;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo-images {
+                margin-top: 15px;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 24px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+
+            .logo-images img {
+                height: 45px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+        }
+
+        .speakers {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+
+        .line h2 {
+            text-align: center;
+            color: #1a237e;
+            padding: 40px;
+            font-size: 50px;
+            padding: 0px;
+        }
+
+        .line h2::after {
+            content: '';
+            position: absolute;
+            width: 8%;
+            height: 3px;
+            background-color: #f44336;
+            bottom: -19vh;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 68vh;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 50px;
+            margin-top: 50px;
+            padding: 20px;
+            margin-left: 80px;
+            margin-right: 50px;
+        }
+
+        .speaker-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .speaker-image {
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .speaker-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .speaker-card:hover .speaker-image img {
+            transform: scale(1.05);
+        }
+
+        .speaker-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .speaker-info h3 {
+            margin-bottom: 5px;
+            color: #1a237e;
+        }
+
+        .speaker-info p {
+            color: #666;
+            font-style: italic;
+        }
+
+
+
+        footer {
+            background: #1e1e1e;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 4rem 0;
+            /* width: 100%; */
+            margin: -8px;
+            /* box-sizing: border-box; */
+        }
+
+        .footer-container {
+            max-width: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 2rem 5%;
+            box-sizing: border-box;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-title {
+
+            color: white;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: bold;
+
+        }
+
+        .footer-title::after {
+            content: '';
+            width: 90px;
+            height: 4px;
+            background: yellow;
+            display: block;
+            margin: 8px 0;
+            margin-left: 4px;
+        }
+
+        .footer-text {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            font-size: 1rem;
+            padding: 5px 0;
+        }
+
+        .footer-links a:hover {
+            color: #f44336;
+        }
+
+        .footer-social a {
+            margin: 0 10px;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        .footer-social a:hover {
+            color: #f44336;
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Ensure no margins or padding on body/html affect the footer */
+        /* html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
+    } */
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        I-LIPS 2025 - December 12-14, 2025 - JECRC Foundation, Jaipur
+    </div>
+    <div class="container">
+        <div class="logo-container">
+            <div class="logo">I-LIPS <span>2025</span></div>
+            <div class="subtitle">
+                <span>12th International Library Information Professional Summit</span>
+                <span>Innovative Technologies in Librarianship: Challenges and Opportunities</span>
+            </div>
+            <div class="logo-images">
+                <img src="/images/3.png" alt="Icon 1">
+                <img src="/images/2.png" alt="Icon 2">
+                <img src="/images/4.png" alt="Icon 3">
+            </div>
+        </div>
+    </div>
+    <div class="headerline">
+        <img src="/images/header-line.png" alt="">
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="About.html">About JECRC</a></li>
+                            <li><a class="dropdown-item" href="vene.html">Venue</a></li>
+                            <li><a class="dropdown-item" href="aim.html">Aim & Objectives</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="authorsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Authors
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="call.html">Call for Papers</a></li>
+                            <li><a class="dropdown-item" href="author.html">Author Guidelines & Submission</a></li>
+                            <li><a class="dropdown-item" href="registration.html">Registration Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="committeesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Committees
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Conference organizer & Boards</a></li>
+                            <li><a class="dropdown-item" href="advisory.html">Advisory Chairs</a></li>
+                            <li><a class="dropdown-item" href="patron.html">Patron/General Chair</a></li>
+                            <li><a class="dropdown-item" href="pcchair.html">PC Chairs Convenor</a></li>
+                            <li><a class="dropdown-item" href="organising.html">Organizing Secretary/Co Convernor/CO
+                                    Organising Secretary</a></li>
+                            <li><a class="dropdown-item" href="committee.html">Organizing Committee</a></li>
+                            <li><a class="dropdown-item" href="national.html">National Program Committee</a></li>
+                            <li><a class="dropdown-item" href="internationl.html">International Program Committee</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="inviteesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Invitees
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="eminent-guest.html">Eminent Guest</a></li>
+                            <li><a class="dropdown-item" href="#">Special Invitees</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="track.html">Conference Tracks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="program.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Keynote Speakers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactus.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="speakers" class="speakers">
+        <div class="container">
+            <div class="section-title">
+                <div class="line">
+                    <h2>Pc Chair</h2>
+                </div>
+            </div>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://jecrcconference.in/icetess2025/images/Prof%20Milan%20Tuba.jpg"
+                            alt="Prof. Milan Tuba">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Milan Tuba</h3>
+                        <p>Vice Rector, Singidunum University,
+                            Belgrade, Serbia</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://jecrcconference.in/icetess2025/images/Prof%20Sheng%20Peng.jpg"
+                            alt="Prof. Sheng-Lung Peng">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Sheng-Lung Peng</h3>
+                        <p>National Taipei University of Business,
+                            Taiwan</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://jecrcconference.in/icetess2025/images/Dr.%20Noe%20G%20Alba.jpg"
+                            alt="Dr. Noe G Alba - Baena">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Noe G Alba - Baena</h3>
+                        <p>La Universidad Autonoma de Ciudad Juarez,
+                            Mexico</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://jecrcconference.in/icetess2025/images/MP.jpg"" alt=" Dr. M. P. Singh">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. M. P. Singh</h3>
+                        <h3>Professor & Head,</h3>
+                        <p>Department of Mechanical
+                            JECRC</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://jecrcconference.in/icetess2025/images/Fauzia.jpg" alt="Dr. Fauzia Siddiqui">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Fauzia Siddiqui</h3>
+                        <h3>Professor</h3>
+                        <p>Department of Mechanical
+                            JECRC</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://jecrcconference.in/icetess2025/images/vijeta.jpg" alt="Dr. Vijeta Kumawat">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Vijeta Kumawat</h3>
+                        <h3>Associate Professor & Head</h3>
+                        <p>Department of Computer Science & Engineering
+                            JECRC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h2 class="footer-title">About the Conference</h2>
+                    <p class="footer-text">Join us for an unforgettable experience featuring industry leaders,
+                        thought-provoking discussions, and unparalleled networking opportunities.</p>
+                </div>
+                <div class="footer-section">
+                    <h2 class="footer-title">Quick Links</h2>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="program.html">Schedule</a>
+                        <a href="speaker.html">Speakers</a>
+                        <a href="#">Sponsors</a>
+                        <a href="contactus.html">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h2 class="footer-title">Contact Us</h2>
+                    <p class="footer-text">📧 Email: icetsl@jecrc.ac.in</p>
+                    <p class="footer-text">📞 Phone: +91 9829230353, +91 7976196689</p>
+                    <p class="footer-text">📍 Location: JECRC Foundation, Jaipur, Rajasthan</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p>&copy; 2024 Conference Name. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html> -->

@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Speakers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="footer.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        .top-bar {
+            background-color: #1a237e;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        /* Header with Logo */
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-text-container {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1a237e;
+            margin-right: 20px;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: #f44336;
+        }
+
+        .subtitle {
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .subtitle span {
+            line-height: 1.3;
+        }
+
+        .logo-images {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .logo-images img {
+            height: 60px;
+        }
+
+        /* Header Line */
+        .headerline {
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, #ff9800, #4caf50, #2196f3, #e91e63);
+            margin-bottom: 0;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #09021a !important;
+            padding: 0;
+        }
+
+        .navbar-nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar-nav .nav-item {
+            position: relative;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            padding: 15px 20px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: white;
+            color: black !important;
+            border-radius: 5px;
+        }
+
+        /* Dropdown styling */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease-in-out;
+            background-color: white;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            padding: 0;
+        }
+
+        .dropdown-item {
+            padding: 10px 15px;
+            font-size: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #33a3ff;
+            color: white;
+        }
+
+        footer {
+            background: #1e1e1e;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 4rem 0;
+            /* width: 100%; */
+            margin: -8px;
+            /* box-sizing: border-box; */
+        }
+
+        .footer-container {
+            max-width: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 2rem 5%;
+            box-sizing: border-box;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-title {
+
+            color: white;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: bold;
+
+        }
+
+        .footer-title::after {
+            content: '';
+            width: 90px;
+            height: 4px;
+            background: yellow;
+            display: block;
+            margin: 8px 0;
+            margin-left: 4px;
+        }
+
+        .footer-text {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            font-size: 1rem;
+            padding: 5px 0;
+        }
+
+        .footer-links a:hover {
+            color: #f44336;
+        }
+
+        .footer-social a {
+            margin: 0 10px;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        .footer-social a:hover {
+            color: #f44336;
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Ensure no margins or padding on body/html affect the footer */
+        body {
+            /* margin: 0; */
+            box-sizing: border-box;
+            /* padding: 0; */
+            /* width: 100%; */
+            overflow-x: hidden;
+        }
+
+        .speakers {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+
+        .line h2 {
+            text-align: center;
+            color: #1a237e;
+            padding: 40px;
+            font-size: 50px;
+            padding: 20px;
+        }
+
+        .line h2::after {
+            content: '';
+            position: absolute;
+            width: 15%;
+            height: 3px;
+            background-color: #f44336;
+            top: 58vh;
+            /* bottom: 0px; */
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 68vh;
+        }
+
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 50px;
+            margin-top: 50px;
+            padding: 20px;
+            margin-left: 80px;
+            margin-right: 50px;
+        }
+
+        .speaker-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .speaker-image {
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .speaker-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .speaker-card:hover .speaker-image img {
+            transform: scale(1.05);
+        }
+
+        .speaker-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .speaker-info h3 {
+            margin-bottom: 5px;
+            color: #1a237e;
+        }
+
+        .speaker-info p {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        I-LIPS 2025 - December 12-14, 2025 - JECRC Foundation, Jaipur
+    </div>
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo-text-container">
+                <div class="logo">I-LIPS <span>2025</span></div>
+                <div class="subtitle">
+                    <span>12th International Library Information Professional Summit</span>
+                    <span>Innovative Technologies in Librarianship: Challenges and Opportunities</span>
+                </div>
+            </div>
+            <div class="logo-images">
+                <img src="/images/3.png" alt="Icon 1">
+                <img src="/images/2.png" alt="Icon 2">
+                <img src="/images/4.png" alt="Icon 3">
+            </div>
+        </div>
+    </div>
+    <div class="headerline"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="About.html">About JECRC</a></li>
+                            <li><a class="dropdown-item" href="vene.html">Venue</a></li>
+                            <li><a class="dropdown-item" href="aim.html">Aim & Objectives</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="authorsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Authors
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="call.html">Call for Papers</a></li>
+                            <li><a class="dropdown-item" href="author.html">Author Guidelines & Submission</a></li>
+                            <li><a class="dropdown-item" href="registration.html">Registration Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="committeesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Committees
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Conference organizer & Boards</a></li>
+                            <li><a class="dropdown-item" href="advisory.html">Advisory Chairs</a></li>
+                            <li><a class="dropdown-item" href="patron.html">Patron/General Chair</a></li>
+                            <li><a class="dropdown-item" href="pcchair.html">PC Chairs Convenor</a></li>
+                            <li><a class="dropdown-item" href="organising.html">Organizing Secretary/Co Convernor/CO
+                                    Organising Secretary</a></li>
+                            <li><a class="dropdown-item" href="committee.html">Organizing Committee</a></li>
+                            <li><a class="dropdown-item" href="national.html">National Program Committee</a></li>
+                            <li><a class="dropdown-item" href="internationl.html">International Program Committee</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="inviteesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Invitees
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="eminent-guest.html">Eminent Guest</a></li>
+                            <li><a class="dropdown-item" href="#">Special Invitees</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="track.html">Conference Tracks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="program.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="speaker.html">Keynote Speakers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactus.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="speakers" class="speakers">
+        <div class="container">
+            <div class="section-title">
+                <div class="line">
+                    <h2>Keynote Speakers</h2>
+                </div>
+            </div>
+            <div class="speakers-grid">
+                <!-- Original speakers -->
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/np_lamirel_visit-1.png"
+                            alt="Prof. Jean-Charles Lamirel">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Jean-Charles Lamirel</h3>
+                        <p>Université de Strasbourg, France</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw_Zo4nxd4JdbHRoGZsm4eREp2cUYwjgbUvvB79wcViYti6r2UhVXiopayfYWuEXYASpA&usqp=CAU" alt="Dr. Richard Gartner">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Richard Gartner</h3>
+                        <p>Digital Librarian at Warburg Institute, University of London
+                        </p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712033466756.jpg"
+                            alt="Dr. Emily Drabinski">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Emily Drabinski</h3>
+                        <p>Associate Professor, Queens (N.Y.) College & President ALA</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/imresizer-1711168898174-1024x1024.jpeg"
+                            alt="Prof. Gobinda Chowdhury">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Gobinda Chowdhury</h3>
+                        <p>University of Strathclyde, Glasgow</p>
+                    </div>
+                </div>
+
+                <!-- <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/CompressJPEG.online_512x512_image.jpg"
+                            alt="Dr. Sophy Shu-Jiun Chen">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Sophy Shu-Jiun Chen</h3>
+                        <p>Associate Prof, Institute of History & Philology, Taiwan</p>
+                    </div>
+                </div> -->
+                <!-- 
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/CompressJPEG.online_512x512_image-1.jpg"
+                            alt="Dr. Saori Donkai">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Saori Donkai</h3>
+                        <p>Vice President, Director of Education Bureau of the Laboratory Schools, Japan</p>
+                    </div>
+                </div> -->
+
+                <!-- <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/CompressJPEG.online_512x512_image-2.jpg"
+                            alt="Viki McDonald">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Viki McDonald</h3>
+                        <p>State Librarian and CEO State Library of Queensland, Australia</p>
+                    </div>
+                </div> -->
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/CompressJPEG.online_512x512_image-3.jpg"
+                            alt="Prof. Cindy Aden">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Cindy Aden</h3>
+                        <p>University of Washington</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712033381578.jpg"
+                            alt="Dr. Leo Appleton">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Leo Appleton</h3>
+                        <p>Senior University Teacher, University of Sheffield, UK</p>
+                    </div>
+                </div>
+
+                <!-- <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712033413244.jpg"
+                            alt="Dr. Diane R. McAdie">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Diane R. McAdie</h3>
+                        <p>Edinburgh Napier University, Scotland</p>
+                    </div>
+                </div> -->
+
+                <!-- Additional speakers from the brochure -->
+                <!-- <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712033138551.jpg"
+                            alt="Amy Affelt">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Amy Affelt</h3>
+                        <p>Director of Database Research at Compass Lexecom, Chicago</p>
+                    </div>
+                </div> -->
+
+                <!-- <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712033167377.jpg"
+                            alt="Anjana H Bhatt">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Anjana H Bhatt</h3>
+                        <p>Librarian, Florida Gulf Coast University, USA</p>
+                    </div>
+                </div> -->
+
+                <!-- <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712033201667.jpg"
+                            alt="Prof. Michael Seadle">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Michael Seadle</h3>
+                        <p>Professor for digital libraries at the Berlin School of LIS, Humboldt-Universitaet zu Berlin,
+                            Germany</p>
+                    </div>
+                </div> -->
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712033103367.jpg"
+                            alt="Seema Rampersad">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Seema Rampersad</h3>
+                        <p>Past President, SLA, USA and British Library, UK</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/imresizer-1711169410217-1024x959.jpeg"
+                            alt="Dr. Patrick Vanouplines">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Patrick Vanouplines</h3>
+                        <p>Vrije University Brussels, Belgium</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/Dr-LeeChu-Keong-Singapore.jpg"
+                            alt="Prof. Lee Chu Keong">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Lee Chu Keong</h3>
+                        <p>NTU, Singapore</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/imresizer-1711171391296-1024x1024.jpeg"
+                            alt="Dr. P R Goswami">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. P R Goswami</h3>
+                        <p>Former Director, NASSDOC, CSL-GoI</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/Dr.-NABI-HASAN-788x1024.jpg"
+                            alt="Dr. Nabi Hasan">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Nabi Hasan</h3>
+                        <p>Librarian & Head, IIT Delhi</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/Dr.-Pathasarathi-Mukhopadhyay.jpg"
+                            alt="Prof. Parthasarathi Mukhopadhyay">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Parthasarathi Mukhopadhyay</h3>
+                        <p>Head DLIS, Kalyani University</p>
+                    </div>
+                </div>
+
+                <!-- <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712032908471-300x300.jpg"
+                            alt="Prof. Uma Kanjilal">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Uma Kanjilal</h3>
+                        <p>Pro-VC, IGNOU</p>
+                    </div>
+                </div> -->
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712032957538.jpg"
+                            alt="Dr. Amir Reza Asnafi">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Amir Reza Asnafi</h3>
+                        <p>Shahid Beheshti University, Tajrish, Iran</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712032996643.jpg"
+                            alt="Joseph Yap">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Joseph Yap</h3>
+                        <p>Eotvos Lorand University Budapest, Hungary</p>
+                    </div>
+                </div>
+
+                <!-- <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712033032453.jpg"
+                            alt="Dr. Dilara Begum">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Dilara Begum</h3>
+                        <p>Chairperson & Associate Prof, East West University, Dhaka, Bangladesh</p>
+                    </div>
+                </div> -->
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712032739066.jpg"
+                            alt="Dr. Kishor Chandra Satpathy">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Kishor Chandra Satpathy</h3>
+                        <p>Chief Librarian, ISI</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/Prof.-Subarna-Kumar-Das.png"
+                            alt="Prof. Subarna Kumar Das">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Subarna Kumar Das</h3>
+                        <p>Professor, Jadavpur University</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://scontent-del2-1.xx.fbcdn.net/v/t39.30808-1/287290769_3037438566568476_3415154724832225088_n.jpg?stp=dst-jpg_s100x100_tt6&_nc_cat=107&ccb=1-7&_nc_sid=e99d92&_nc_ohc=CAwGyvMRzSAQ7kNvwFepFVG&_nc_oc=Adn9My6e5cDlybzLjtSrDxvarDYRZoK0JKrSRIVs5WB9IA1nMEnmFgZi8qFzGjp_U4w&_nc_zt=24&_nc_ht=scontent-del2-1.xx&_nc_gid=_ueqfFHZq3sPji4foo-nbg&oh=00_AfJg4oEnEO5jj_nzPgqFXEhxJY7CqCp9F4_6txvSyB-RAQ&oe=682A4740" alt="Dr. Rajkumar Bhakar">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Rajkumar Bhakar</h3>
+                        <p>Professor and Head, JJT University</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://scontent-del2-3.xx.fbcdn.net/v/t1.6435-9/75204410_10220462158443800_3622885071150645248_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=j1mkSs3ZeC8Q7kNvwENRTPf&_nc_oc=Adl5v93Dx96bQYd8gR2l0uHggbSExQfmFdTdFvYBerN8jLfrr7inOgu4GrcnQwKgP2A&_nc_zt=23&_nc_ht=scontent-del2-3.xx&_nc_gid=UimHHA8JJdC3EJ-yIEXXqA&oh=00_AfL42TyXUXDNCnRO5Y6gU9iVdY8DNKlHomp0fHUAC6eScQ&oe=684944B8"
+                            alt="Dr. Sanjay Kataria">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Sanjay Kataria</h3>
+                        <p>Director Library and Professor, Bennet University</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/Ramesh-C.-Gaur.jpg"
+                            alt="Prof. Ramesh C Gaur">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Ramesh C Gaur</h3>
+                        <p>Dean, Director (LIS), IGNCA</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/Dr.-Rajesh-Singh-librarian-Delhi-University.jpeg"
+                            alt="Dr. Rajesh Singh">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Rajesh Singh</h3>
+                        <p>Librarian, Delhi University</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/Shantanu-Ganguly.jpg"
+                            alt="Dr. Shantanu Ganguly">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Shantanu Ganguly</h3>
+                        <p>Director Library, Ashoka University</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712032321287.jpg"
+                            alt="Dr. Sangeeta Kaul">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Sangeeta Kaul</h3>
+                        <p>Director, DELNET</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712032803715.jpg"
+                            alt="Dr. Manoj Kumar Sinha">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Manoj Kumar Sinha</h3>
+                        <p>Dean, LIS, Assam University</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/Dr.-Manoj-Kumar-Verma-.png"
+                            alt="Prof. Manoj Kumar Verma">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Manoj Kumar Verma</h3>
+                        <p>Dept of LIS, Mizoram University</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712032664660.jpg"
+                            alt="Dr. P K Jain">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. P K Jain</h3>
+                        <p>Librarian, Institute of Economic Growth</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712032606416.jpg"
+                            alt="Dr. Parveen Babbar">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Parveen Babbar</h3>
+                        <p>Deputy Librarian, JNU</p>
+                    </div>
+                </div>
+
+                <!-- <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712032495666.jpg"
+                            alt="Prof. Jagtar Singh">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Jagtar Singh</h3>
+                        <p>Director, Collaboration and Partnerships, IATLIS</p>
+                    </div>
+                </div> -->
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/Rabiab-Sangchantr.jpg"
+                            alt="Rabiab Sangchantr">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Rabiab Sangchantr</h3>
+                        <p>Librarian, Chulalongkorn University, Thailand</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/03/Labibah-Zain.jpg"
+                            alt="Dr. Labibah Zain">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Labibah Zain</h3>
+                        <p>UIN Sunan Kalijaga Yogyakarta, Indonesia</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://galgotiasuniversitylibrary.com/i-lips2024/wp-content/uploads/2024/04/imresizer-1712032855019.jpg"
+                            alt="Shirley Ingles-Cruz">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Shirley Ingles-Cruz</h3>
+                        <p>Librarian of Commission on Appointment, Philippines</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://media-hosting.imagekit.io/910bb91ec8a54330/IMG_20250514_155757.jpg?Expires=1841826496&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=M4bQxN~m5W6g~NGeqEXlcdXI-EJX-C~5h7KoeU~rXJHJx36WfO80071kJ7AmAv2OL28iPndtmkAt9lJGdRf24DA6BmwX6bk-HiClfG70jc-Gt-7zTuUnM58pCTV8wvovAuzj~a-LjhW9MlAQkLXN4-SE7-~~XisdT8LKnvX8RSIgZkhf9amZybCZ4tZFjxtzeZIK-61iXstPC~RtQCfwPqTCYqJPbpg5qwRKWk7XAXUE8tsDu8gIvo8TuHXI6h36U2Ir9TjxeTON5JTiLEKOC~tHpe3-2OAMXQhZsRK1ZLXHN5OjstqlQaBxegwXyaXr1ArYUnXwOqFPoZJwQo1MNw__" alt="Dr. P.R Meena">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. P.R Meena</h3>
+                        <p>Librarian, SMS Medical College, Jaipur</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://media-hosting.imagekit.io/a34dd28f5c164358/IMG_20250514_160410.jpg?Expires=1841826876&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=LCUBP1aYlO6zqX3RR2aCeCRn--fzfJ05wAKnogsxflSwQq~~Jbp2QNLQfx5VT-7Tu6eoE2RfaLRiq8t8XA38HdU-yIzqR7DP660f34V01lgyTHpvUmABmEt25~1NxZYEyxkIrzfhMcSt6cV7j2ESocKuzWSUvVBGaI1SdJI4~GSyAteZottKbPUlLLI2xyU8sRDLOqu3aeJdRDF7z79YkGFQ4za6j1no7INTSIPY3XsmTulbhPtoF2CnrhqjIVlSWlpNFHZgt2CGM7k4nUWfoWyCFYPfSW9McMQvXWVeMv7jVamfgLHPF1cplyuTqzssY42MEM7hMvhd02abqLnCrw__" alt="Dr. Rishi Tiwari">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Rishi Tiwari</h3>
+                        <p>PhD, Librarian, MNIT, Jaipur</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://scontent-del2-1.xx.fbcdn.net/v/t39.30808-6/450679887_7986565664737692_7095970831896526963_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ADE31UxW9qsQ7kNvwGrzBoS&_nc_oc=AdkkQk-w1WJHCDyBGKTrbGFj3fyDWP5qL1e9HyWeZ9otULKswRsBsgcHJcbxiGZTVQc&_nc_zt=23&_nc_ht=scontent-del2-1.xx&_nc_gid=uciHXF_Hx4csofhc4rN-NA&oh=00_AfLskQpKT5zqmabVTAuE3Z50kzVgYbPsbNyRvtYZjt958Q&oe=6827AEA3"
+                            alt="Dr. Sujin Butdisuwan">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Sujin Butdisuwan</h3>
+                        <p> Dean, Faculty of Psychology, Shinawatra University, Thailand</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://scontent-del2-2.xx.fbcdn.net/v/t1.6435-9/76908108_2093328450766951_2287810004905885696_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=f_04smBmASUQ7kNvwE7ZnWO&_nc_oc=Adnl_yxcd2Ty_Iw1eIq92odIuIo9e9ZJPAh_h7I0QtdTssAya7T2AG8uImbkDITmIx4&_nc_zt=23&_nc_ht=scontent-del2-2.xx&_nc_gid=i8oGgYYAw30NdjubP_JOSA&oh=00_AfLzs0tnCH3yzb02bDemYJnLrmqjurut0ywTQdpWP7w1gA&oe=684954E5"
+                            alt="Prof. Roshan lal Raina">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Prof. Roshan lal Raina</h3>
+                        <p>Vice Chancelor, Jaipur, National University, jaipur Rajasthan</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://media-hosting.imagekit.io/49b4ef747b314627/WhatsApp%20Image%202025-05-14%20at%2010.19.28_54b19d70.jpg?Expires=1841825326&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=2JON91TkCvzont0cs50CqgZuOYiioz5k4tgcrh9aTkMcOM~KtkZ1TIePJ35Wj~o1z6QSikFJ2bjKuMI0QQZXSj10SmQzqk-Nw~d2rl42R834hoH2tzk5JGf4ejxfWt1TjEygNEctlm4hxIXQHXICDAVnJrLtOIdh~OkCJc9Eny02apb7HCg6uaZ7vDAsUTF0FPQO-rQdA-Atr1Ui4bEBRk0t1RlbhU72JapyKx5SS~4cA5lKkWYU-v7z~uZGRPax0oFs96Z192PnsoZMn0Yjuy1RGFNDXC4MeyKoysgCler0uMTL-Q5FiDito6uhnl1UMnjKceRzFMVZq0MdSBoPbA__"
+                            alt="Dr. Sonali Malhotra">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr. Sonali Malhotra</h3>
+                        <p>SLIA, Central Library IIT MandiSenior Library Information Assistant
+                            IIT Mandi (H.P.)</p>
+                    </div>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://web.edu.hku.hk/stafflist/thumbnail/dchiu88.jpg"
+                            alt="Dr.Dickson">
+                    </div>
+                    <div class="speaker-info">
+                        <h3>Dr.Dickson
+                        </h3>
+                        <p> K.W. Chiu University of Hong Kong</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h2 class="footer-title">About the Conference</h2>
+                    <p class="footer-text">Join us for an unforgettable experience featuring industry leaders,
+                        thought-provoking discussions, and unparalleled networking opportunities.</p>
+                </div>
+                <div class="footer-section">
+                    <h2 class="footer-title">Quick Links</h2>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="program.html">Schedule</a>
+                        <a href="speaker.html">Speakers</a>
+                        <a href="#">Sponsors</a>
+                        <a href="contactus.html">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h2 class="footer-title">Contact Us</h2>
+                    <p class="footer-text">📧 Email: icetsl@jecrc.ac.in</p>
+                    <p class="footer-text">📞 Phone: +91 9829230353, +91 7976196689</p>
+                    <p class="footer-text">📍 Location: JECRC Foundation, Jaipur, Rajasthan</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p>&copy; 2024 Conference Name. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

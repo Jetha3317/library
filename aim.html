@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Aim and Objective</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        /* Reset styles first */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Main content styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Top bar styles - fixed */
+        .top-bar {
+            background-color: #1a237e;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            width: 100%;
+            position: relative;
+            z-index: 100;
+        }
+
+        /* Header with Logo - fixed */
+        .header-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo-text-area {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1a237e;
+            margin-right: 20px;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: #f44336;
+        }
+
+        .subtitle {
+            display: flex;
+            flex-direction: column;
+            font-size: 16px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .subtitle span {
+            line-height: 1.3;
+        }
+
+        .logo-bar {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .logo-bar img {
+            height: 60px;
+            max-width: 100%;
+        }
+
+        /* Header Line */
+        .headerline {
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, #ff9800, #4caf50, #2196f3, #e91e63);
+            margin: 0;
+        }
+
+        /* Navbar - fixed */
+        .navbar {
+            background-color: #09021a !important;
+            padding: 0;
+            width: 100%;
+        }
+
+        .navbar-nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .navbar-nav .nav-item {
+            position: relative;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            padding: 15px 20px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: white;
+            color: black !important;
+            border-radius: 5px;
+        }
+
+        /* Dropdown styling */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease-in-out;
+            background-color: white;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            padding: 0;
+            z-index: 1000;
+        }
+
+        .dropdown-item {
+            padding: 10px 15px;
+            font-size: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #33a3ff;
+            color: white;
+        }
+
+        /* Main content container */
+        .content-container {
+            max-width: 80%;
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .logo-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .logo-text-area {
+                margin-bottom: 15px;
+                justify-content: center;
+            }
+
+            .logo-bar {
+                justify-content: center;
+            }
+
+            .navbar-nav {
+                align-items: center;
+            }
+
+            .content-container {
+                max-width: 95%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-text-area {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .subtitle {
+                text-align: center;
+            }
+
+            .logo-bar {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* Footer styles */
+        footer {
+            background: #1e1e1e;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            padding: 4rem 0;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin: 0 15px 20px;
+        }
+
+        .footer-title {
+
+            color: white;
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: bold;
+
+        }
+
+        .footer-title::after {
+            content: '';
+            width: 90px;
+            height: 4px;
+            background: yellow;
+            display: block;
+            margin: 8px 0;
+            margin-left: 4px;
+        }
+
+        .footer-text {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .footer-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            font-size: 1rem;
+            padding: 5px 0;
+        }
+
+        .footer-links a:hover {
+            color: #f44336;
+        }
+
+        .footer-social {
+            margin-bottom: 10px;
+        }
+
+        .footer-social a {
+            margin: 0 10px;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        .footer-social a:hover {
+            color: #f44336;
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .p {
+            margin-left: 418px;
+        }
+    </style>
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Fixed topbar -->
+    <div class="top-bar">
+        I-LIPS 2025 - December 12-14, 2025 - JECRC Foundation, Jaipur
+    </div>
+
+    <!-- Fixed logo container -->
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo-text-area">
+                <div class="logo">I-LIPS <span>2025</span></div>
+                <div class="subtitle">
+                    <span>12th International Library Information Professional Summit</span>
+                    <span>Innovative Technologies in Librarianship: Challenges and Opportunities</span>
+                </div>
+            </div>
+            <div class="logo-bar">
+                <img src="/images/3.png" alt="Icon 1">
+                <img src="/images/2.png" alt="Icon 2">
+                <img src="/images/4.png" alt="Icon 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed headerline and navbar -->
+    <div class="headerline"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.html" id="homeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="About.html">About JECRC</a></li>
+                            <li><a class="dropdown-item" href="vene.html">Venue</a></li>
+                            <li><a class="dropdown-item" href="aim.html">Aim & Objectives</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="authorsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Authors
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="call.html">Call for Papers</a></li>
+                            <li><a class="dropdown-item" href="author.html">Author Guidelines & Submission</a></li>
+                            <li><a class="dropdown-item" href="registration.html">Registration Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="committeesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Committees
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Conference organizer & Boards</a></li>
+                            <li><a class="dropdown-item" href="advisory.html">Advisory Chairs</a></li>
+                            <li><a class="dropdown-item" href="patron.html">Patron/General Chair</a></li>
+                            <li><a class="dropdown-item" href="pcchair.html">PC Chairs Convenor</a></li>
+                            <li><a class="dropdown-item" href="organising.html">Organizing Secretary/Co Convernor/CO
+                                    Organising Secretary</a></li>
+                            <li><a class="dropdown-item" href="committee.html">Organizing Committee</a></li>
+                            <li><a class="dropdown-item" href="national.html">National Program Committee</a></li>
+                            <li><a class="dropdown-item" href="internationl.html">International Program Committee</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="inviteesDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Invitees
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="eminent-guest.html">Eminent Guest</a></li>
+                            <li><a class="dropdown-item" href="#">Special Invitees</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="track.html">Conference Tracks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="program.html">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Keynote Speakers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactus.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="content-container">
+        <h1>Aim and Objective</h1>
+        <p>
+            This conference aims to explore the recent trends in the <strong>Engineering Education Systems &
+                Sustainability</strong>
+            using various engineering tools. It addresses innovative advancements in Engineering Trends in Education
+            Systems &
+            Sustainability issues with specific reference to the area of Education Systems & Sustainability.
+        </p>
+        <p>
+            The conference provides an international platform for researchers, academicians, industry representatives,
+            government officials, students, and other stakeholders in the field to explore opportunities, disseminate,
+            and acquire beneficial knowledge from the discussions on various themes. Selected papers will be published
+            in
+            different proceedings and journals indexed by Scopus, Web of Science, Google Scholar, and others, ensuring
+            international exposure and opportunities for citations.
+        </p>
+        <p>
+            Additionally, the conference fosters <strong>Networking</strong> by bringing together stakeholders from
+            various
+            countries to exchange thoughts, ideas, and solutions. This facilitates new connections and collaborations
+            for
+            future research endeavors.
+        </p>
+        <p>
+            The focus of the conference is on current advances in Engineering research and its role in academic
+            sustainability,
+            covering fields such as Computer Science, Artificial Intelligence, Mechanical, Electronics, Electrical,
+            Civil,
+            and Applied Sciences. The outcomes significantly contribute to society by advancing knowledge and promoting
+            innovative solutions to improve lives worldwide.
+        </p>
+    </div>
+
+    <!-- Footer would go here -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h2 class="footer-title">About the Conference</h2>
+                    <p class="footer-text">Join us for an unforgettable experience featuring industry leaders,
+                        thought-provoking discussions, and unparalleled networking opportunities.</p>
+                </div>
+                <div class="footer-section">
+                    <h2 class="footer-title">Quick Links</h2>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="program.html">Schedule</a>
+                        <a href="speaker.html">Speakers</a>
+                        <a href="#">Sponsors</a>
+                        <a href="contactus.html">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h2 class="footer-title">Contact Us</h2>
+                    <p class="footer-text">📧 Email: icetsl@jecrc.ac.in</p>
+                    <p class="footer-text">📞 Phone: +91 9829230353, +91 7976196689</p>
+                    <p class="footer-text">📍 Location: JECRC Foundation, Jaipur, Rajasthan</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="p">
+                    <p>&copy; 2024 Conference Name. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
