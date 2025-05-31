@@ -4,790 +4,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="program.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- <link rel="stylesheet" href="footer.css"> -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            overflow-x: hidden;
-        }
-
-        /* Top bar */
-        .top-bar {
-            background-color: #1a237e;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            font-weight: bold;
-            width: 100%;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-
-        }
-
-        /* Logo section */
-        /* Logo section */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            padding: 20px 0;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 32px;
-            font-weight: bold;
-            color: #1a237e;
-            margin-bottom: 5px;
-        }
-
-        .logo span {
-            color: #f44336;
-        }
-
-        .subtitle {
-            display: flex;
-            flex-direction: column;
-            font-size: 16px;
-            color: #666;
-            margin-top: 1px;
-        }
-
-        .subtitle span {
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-
-        .logo-bar {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            margin-top: 10px;
-            gap: 15px;
-        }
-
-        .logo-bar img {
-            height: 80px;
-            width: auto;
-            padding: 8px;
-        }
-
-        /* Media queries */
-        @media (max-width: 992px) {
-            .logo-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .subtitle {
-                margin-left: 0;
-                align-items: center;
-            }
-
-            .logo-bar {
-                justify-content: center;
-                margin-top: 15px;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-        }
-
-        /* Header line */
-        .headerline {
-            width: 100%;
-            height: 6px;
-            background: linear-gradient(to right, #ff9800, #4caf50, #2196f3, #e91e63);
-            margin-bottom: 0;
-        }
-
-        /* Navbar */
-        .navbar {
-            background-color: #09021a !important;
-            padding: 0;
-        }
-
-        .navbar-nav {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .navbar-nav .nav-item {
-            position: relative;
-        }
-
-        .navbar-nav .nav-link {
-            color: white !important;
-            padding: 15px 20px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-            color: #000 !important;
-        }
-
-        /* Dropdown styling */
-        .dropdown-menu {
-            background-color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            min-width: 200px;
-            padding: 0;
-            margin-top: 0;
-        }
-
-        .dropdown-item {
-            padding: 10px 15px;
-            font-size: 12px;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-item:hover {
-            background-color: #33a3ff;
-            color: white;
-        }
-
-        /* Media queries */
-        @media (max-width: 992px) {
-            .navbar-nav {
-                justify-content: flex-start;
-            }
-
-            .logo-container {
-                flex-direction: column;
-            }
-
-            .logo-bar {
-                margin-top: 15px;
-                flex-wrap: wrap;
-            }
-
-            .logo-bar img {
-                height: 40px;
-            }
-        }
-
-        /* Header Line */
-        .headerline {
-            width: 100%;
-            height: 6px;
-            background: linear-gradient(to right, #ff9800, #4caf50, #2196f3, #e91e63);
-            margin-bottom: 0;
-        }
-
-        /* Navbar */
-        .navbar {
-            background-color: #09021a !important;
-            padding: 0;
-        }
-
-        .navbar-nav {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .navbar-nav .nav-item {
-            position: relative;
-        }
-
-        .navbar-nav .nav-link {
-            color: white !important;
-            padding: 15px 20px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        .navbar-nav .nav-link:hover {
-            background-color: white;
-            color: black !important;
-            border-radius: 5px;
-        }
-
-        /* Dropdown styling */
-        .nav-item.dropdown:hover .dropdown-menu {
-            display: block;
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-menu {
-            display: none;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.3s ease-in-out;
-            background-color: white;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            min-width: 200px;
-            padding: 0;
-        }
-
-        .dropdown-item {
-            padding: 10px 15px;
-            font-size: 12px;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-item:hover {
-            background-color: #33a3ff;
-            color: white;
-        }
-
-        footer {
-            background: #1e1e1e;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            padding: 4rem 0;
-            /* width: 100%; */
-            margin: -8px;
-            /* box-sizing: border-box; */
-        }
-
-        .footer-container {
-            max-width: 100%;
-            width: 100%;
-            margin: 0;
-            padding: 2rem 5%;
-            box-sizing: border-box;
-        }
-
-        .footer-grid {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-            width: 100%;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .footer-title {
-
-            color: white;
-            font-size: 18px;
-            margin-bottom: 15px;
-            font-weight: bold;
-
-        }
-
-        .footer-title::after {
-            content: '';
-            width: 90px;
-            height: 4px;
-            background: yellow;
-            display: block;
-            margin: 8px 0;
-            margin-left: 4px;
-        }
-
-        .footer-text {
-            color: #ccc;
-            line-height: 1.6;
-        }
-
-        .footer-links a {
-            display: block;
-            color: #ccc;
-            text-decoration: none;
-            transition: all 0.3s ease-in-out;
-            font-size: 1rem;
-            padding: 5px 0;
-        }
-
-        .footer-links a:hover {
-            color: #f44336;
-        }
-
-        .footer-social a {
-            margin: 0 10px;
-            color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s ease-in-out;
-            display: inline-block;
-        }
-
-        .footer-social a:hover {
-            color: #f44336;
-        }
-
-        .footer-bottom {
-            margin-top: 3rem;
-            border-top: 2px solid rgba(255, 255, 255, 0.2);
-            padding-top: 1.5rem;
-            font-size: 0.9rem;
-            text-align: center;
-            width: 100%;
-        }
-
-        /* Ensure no margins or padding on body/html affect the footer */
-        /* html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        overflow-x: hidden;
-    } */
-        .program {
-            padding: 80px 0;
-            background-color: white;
-        }
-
-        .program h2 {
-            text-align: center;
-            color: #1a237e;
-            padding: 40px;
-            font-size: 50px;
-            /* margin: 20px; */
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 16%;
-            height: 3px;
-            background-color: #f44336;
-            top: 53vh;
-            /* bottom: -21vh; */
-            left: 50%;
-            transform: translateX(-50%);
-            margin-bottom: 65vh;
-        }
-
-        .program-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .tab-button {
-            padding: 12px 25px;
-            background-color: #f1f1f1;
-            border: none;
-            cursor: pointer;
-            margin: 5px;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .tab-button.active {
-            background-color: #1a237e;
-            color: white;
-        }
-
-        .program-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .day {
-            display: none;
-        }
-
-        .day.active {
-            display: block;
-        }
-
-        .timeline-item {
-            display: flex;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .timeline-time {
-            flex: 0 0 120px;
-            padding: 15px;
-            background-color: #1a237e;
-            color: white;
-            text-align: center;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .timeline-content {
-            flex: 1;
-            padding: 15px 20px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            margin-left: 20px;
-            position: relative;
-        }
-
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background-color: #1a237e;
-            left: -8px;
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg);
-        }
-
-        .timeline-content h3 {
-            margin-bottom: 10px;
-            color: #1a237e;
-        }
-
-        .timeline-content p {
-            margin-bottom: 10px;
-        }
-
-        .speaker-badge {
-            display: inline-block;
-            background-color: #f44336;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            margin-right: 5px;
-        }
-        section h1{
-            width: 100%;
-            height: 100vh;
-            text-align: center;
-        }
-    </style>
+    <title>Program Schedule - I-LIPS 2025</title>
 </head>
 
 <body>
-    <div class="top-bar">
-        I-LIPS 2025 - December 12-14, 2025 - JECRC Foundation, Jaipur
-    </div>
-    <div class="container">
-        <div class="logo-container">
-            <div class="logo">I-LIPS <span>2025</span></div>
-            <div class="subtitle">
-                <span>12th International Library Information Professional Summit</span>
-                <span>Innovative Technologies in Librarianship: Challenges and Opportunities</span>
-            </div>
-            <div class="logo-bar">
-                <img src="/images/3.png" alt="Icon 1">
-                <img src="/images/2.png" alt="Icon 2">
-                <img src="/images/4.png" alt="Icon 3">
-            </div>
-        </div>
-    </div>
-    <div class="headerline">
-        <img src="/images/header-line.png" alt="">
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="index.html" id="homeDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Home
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="About.html">About JECRC</a></li>
-                            <li><a class="dropdown-item" href="vene.html">Venue</a></li>
-                            <li><a class="dropdown-item" href="aim.html">Aim & Objectives</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="authorsDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Authors
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="call.html">Call for Papers</a></li>
-                            <li><a class="dropdown-item" href="author.html">Author Guidelines & Submission</a></li>
-                            <li><a class="dropdown-item" href="registration.html">Registration Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="committeesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Committees
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Conference organizer & Boards</a></li>
-                            <li><a class="dropdown-item" href="advisory.html">Advisory Chairs</a></li>
-                            <li><a class="dropdown-item" href="patron.html">Patron/General Chair</a></li>
-                            <li><a class="dropdown-item" href="pcchair.html">PC Chairs Convenor</a></li>
-                            <li><a class="dropdown-item" href="organising.html">Organizing Secretary/Co Convernor/CO
-                                    Organising Secretary</a></li>
-                            <li><a class="dropdown-item" href="committee.html">Organizing Committee</a></li>
-                            <li><a class="dropdown-item" href="national.html">National Program Committee</a></li>
-                            <li><a class="dropdown-item" href="internationl.html">International Program Committee</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="inviteesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Invitees
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="eminent-guest.html">Eminent Guest</a></li>
-                            <li><a class="dropdown-item" href="#">Special Invitees</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="track.html">Conference Tracks</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="program.html">Programs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="speaker.html">Keynote Speakers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contactus.html">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <section>
-        <h1>coming soon...</h1>
-    </section>
+    <!-- Header will be loaded here -->
+    <div id="header"></div>
 
-    <!-- <section id="home" class="hero">
-        <video autoplay muted loop id="hero-video">
-            <source src="/images/videoplayback.webm" type="video/mp4">
-        </video>
+    <div class="main-content">
+        <div class="line">
+            <h1>Program Schedule</h1>
+        </div>
+
+        <!-- Program Section -->
         <div class="container">
-            <div class="hero-date">December 12-14, 2025</div>
-            <h1>12th International Library Information Professional Summit</h1>
-            <h2>Innovative Technologies in Librarianship: Challenges and Opportunities</h2>
-            <p class="hero-venue">JECRC Foundation, Jaipur, India</p>
-            <a href="registration.html" class="cta-button">Register Now</a>
-            <a href="call.html" class="cta-button secondary">Submit Paper</a>
+            <h2>Program Schedule</h2>
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th>Event</th>
+                </tr>
+                <tr>
+                    <td>9:00 AM - 10:00 AM</td>
+                    <td>Registration and Welcome Coffee</td>
+                </tr>
+                <tr>
+                    <td>10:00 AM - 11:00 AM</td>
+                    <td>Inaugural Session</td>
+                </tr>
+                <tr>
+                    <td>11:00 AM - 12:30 PM</td>
+                    <td>Keynote Speeches</td>
+                </tr>
+                <tr>
+                    <td>12:30 PM - 1:30 PM</td>
+                    <td>Lunch Break</td>
+                </tr>
+                <tr>
+                    <td>1:30 PM - 3:00 PM</td>
+                    <td>Technical Sessions - Track 1</td>
+                </tr>
+                <tr>
+                    <td>3:00 PM - 3:30 PM</td>
+                    <td>Tea Break</td>
+                </tr>
+                <tr>
+                    <td>3:30 PM - 5:00 PM</td>
+                    <td>Technical Sessions - Track 2</td>
+                </tr>
+                <tr>
+                    <td>5:00 PM - 6:00 PM</td>
+                    <td>Panel Discussion</td>
+                </tr>
+                <tr>
+                    <td>6:00 PM - 7:00 PM</td>
+                    <td>Cultural Program</td>
+                </tr>
+                <tr>
+                    <td>7:00 PM - 8:00 PM</td>
+                    <td>Dinner</td>
+                </tr>
+            </table>
         </div>
-    </section> -->
-    <!-- <section id="program" class="program">
-        <div class="container">
-            <div class="section-title">
-                <h2>Conference Program</h2>
-            </div>
-            <div class="program-tabs">
-                <button class="tab-button active" data-day="day1">Day 1 (Dec 12)</button>
-                <button class="tab-button" data-day="day2">Day 2 (Dec 13)</button>
-                <button class="tab-button" data-day="day3">Day 3 (Dec 14)</button>
-            </div>
-            <div class="program-content">
-                <div id="day1" class="day active">
-                    <div class="timeline-item">
-                        <div class="timeline-time">09:00 - 10:00</div>
-                        <div class="timeline-content">
-                            <h3>Registration & Welcome Coffee</h3>
-                            <p>Conference registration and welcome kit collection</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">10:00 - 11:00</div>
-                        <div class="timeline-content">
-                            <h3>Inaugural Session</h3>
-                            <p>Welcome address by the JECRC Foundation</p>
-                            <p><span class="speaker-badge">Speaker</span> Arpit Agrawal, Vice Chairperson, JECRC</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">11:00 - 12:30</div>
-                        <div class="timeline-content">
-                            <h3>Keynote Address: Future of Libraries in Digital Age</h3>
-                            <p>An exploration of how emerging technologies are reshaping library services</p>
-                            <p><span class="speaker-badge">Speaker</span> Dr. Emily Drabinski, President, ALA</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">12:30 - 14:00</div>
-                        <div class="timeline-content">
-                            <h3>Lunch Break</h3>
-                            <p>Networking opportunity with speakers and delegates</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">14:00 - 15:30</div>
-                        <div class="timeline-content">
-                            <h3>Panel Discussion: AI in Libraries</h3>
-                            <p>Exploring the integration of AI for information retrieval and user assistance</p>
-                            <p><span class="speaker-badge">
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">10:00 - 11:00</div>
-                        <div class="timeline-content">
-                            <h3>Opening Ceremony</h3>
-                            <p>Inauguration of the conference with keynote speeches.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">11:00 - 12:30</div>
-                        <div class="timeline-content">
-                            <h3>Keynote Address</h3>
-                            <p>Keynote speaker: Prof. Michael Seadle on "Future of Digital Libraries".</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">12:30 - 13:30</div>
-                        <div class="timeline-content">
-                            <h3>Lunch Break</h3>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">13:30 - 15:00</div>
-                        <div class="timeline-content">
-                            <h3>Panel Discussion</h3>
-                            <p>Discussion on "AI in Libraries: Opportunities and Challenges".</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">15:00 - 16:30</div>
-                        <div class="timeline-content">
-                            <h3>Workshops</h3>
-                            <p>Hands-on workshops on digital archiving and data management.</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="day2" class="day">
-                    <div class="timeline-item">
-                        <div class="timeline-time">09:00 - 10:30</div>
-                        <div class="timeline-content">
-                            <h3>Research Presentations</h3>
-                            <p>Selected papers presented by researchers.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">10:30 - 12:00</div>
-                        <div class="timeline-content">
-                            <h3>Guest Speaker Session</h3>
-                            <p>Guest speaker: Dr. Emily Drabinski on "User Engagement in Libraries".</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">12:00 - 13:00</div>
-                        <div class="timeline-content">
-                            <h3>Lunch Break</h3>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">13:00 - 15:00</div>
-                        <div class="timeline-content">
-                            <h3>Round Table Discussions</h3>
-                            <p>Topics on digital literacy and information management.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">15:00 - 16:30</div>
-                        <div class="timeline-content">
-                            <h3>Networking Session</h3>
-                            <p>Opportunity for participants to network and collaborate.</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="day3" class="day">
-                    <div class="timeline-item">
-                        <div class="timeline-time">09:00 - 10:30</div>
-                        <div class="timeline-content">
-                            <h3>Closing Keynote</h3>
-                            <p>Closing keynote by Prof. Gobinda Chowdhury on "The Future of Librarianship".</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">10:30 - 12:00</div>
-                        <div class="timeline-content">
-                            <h3>Feedback and Discussion</h3>
-                            <p>Participants share feedback and discuss future directions.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">12:00 - 13:00</div>
-                        <div class="timeline-content">
-                            <h3>Lunch Break</h3>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">13:00 - 14:00</div>
-                        <div class="timeline-content">
-                            <h3>Awards Ceremony</h3>
-                            <p>Acknowledgment of outstanding contributions and papers.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">14:00 - 15:00</div>
-                        <div class="timeline-content">
-                            <h3>Closing Remarks</h3>
-                            <p>Summary of the conference and future initiatives.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h2 class="footer-title">About the Conference</h2>
-                    <p class="footer-text">Join us for an unforgettable experience featuring industry leaders,
-                        thought-provoking discussions, and unparalleled networking opportunities.</p>
-                </div>
-                <div class="footer-section">
-                    <h2 class="footer-title">Quick Links</h2>
-                    <div class="footer-links">
-                        <a href="index.html">Home</a>
-                        <a href="program.html">Schedule</a>
-                        <a href="speaker.html">Speakers</a>
-                        <a href="#">Sponsors</a>
-                        <a href="contactus.html">Contact</a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h2 class="footer-title">Contact Us</h2>
-                    <p class="footer-text">📧 Email: icetsl@jecrc.ac.in</p>
-                    <p class="footer-text">📞 Phone: +91 9829230353, +91 7976196689</p>
-                    <p class="footer-text">📍 Location: JECRC Foundation, Jaipur, Rajasthan</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-                <p>&copy; 2024 Conference Name. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+    </div>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
 </body>
 
 </html>
+
+

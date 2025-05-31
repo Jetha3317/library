@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #0d47a1;
+    --primary-light: #1976d2;
+    --secondary: #ff5722;
+    --secondary-light: #ff7043;
+    --text: #333;
+    --text-light: #666;
+    --background: #f8f9fa;
+    --card: #ffffff;
+    --border: #e0e0e0;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+h4 {
+    color: var(--primary);
+    margin: 20px 0 10px;
+    font-size: 1.2rem;
+}
+
+.card {
+    background-color: var(--card);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.fee-table th,
+.fee-table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid var(--border);
+}
+
+.fee-table th {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    font-weight: 600;
+}
+
+.fee-table tr:nth-child(even) {
+    background-color: rgba(25, 118, 210, 0.05);
+}
+
+.fee-table tr:hover {
+    background-color: rgba(25, 118, 210, 0.1);
+}
+
+.fee-table ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.fee-table li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.fee-table li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-light);
+    font-weight: bold;
+}
+
+.notes p {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.notes p:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+.bank-details p {
+    margin-bottom: 12px;
+}
+
+.bank-details strong {
+    color: var(--primary);
+    min-width: 120px;
+    display: inline-block;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .container h3 {
+        font-size: 1.2rem;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .fee-table {
+        font-size: 12px;
+    }
+
+    .fee-table th,
+    .fee-table td {
+        padding: 8px;
+    }
+} 

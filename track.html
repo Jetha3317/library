@@ -4,638 +4,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conference Track - I-LIPS 2025</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for footer icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="track.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Top Bar - Dark blue with white text */
-        .top-bar {
-            background-color: #1a237e;
-            color: white;
-            padding: 15px 0;
-            text-align: center;
-            font-weight: bold;
-            width: 100%;
-            font-size: 18px;
-        }
-
-        /* Logo Bar - White background with logo and text */
-        .logo-bar {
-            background-color: white;
-            padding: 20px 0;
-            width: 100%;
-        }
-
-        .logo-container {
-            width: 85%;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-text {
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .logo-title {
-            font-size: 40px;
-            font-weight: bold;
-            color: #1a237e;
-            line-height: 1;
-            margin-right: 15px;
-        }
-
-        .logo-title span {
-            color: #f44336;
-        }
-
-        .logo-subtitle {
-            display: flex;
-            flex-direction: column;
-            font-size: 16px;
-            color: #555;
-        }
-
-        .logo-subtitle span {
-            line-height: 1.4;
-        }
-
-        .logo-images {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .logo-images img {
-            height: 50px;
-        }
-
-        /* Colorful divider line */
-        .header-line {
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, #3f51b5, #2196f3, #00bcd4, #4caf50, #8bc34a, #cddc39, #ffeb3b, #ffc107, #ff9800, #ff5722, #f44336);
-        }
-
-        /* Navigation bar - Dark background with uppercase text */
-        .main-nav {
-            background-color: #0a0a2e;
-            width: 100%;
-            padding: 0;
-        }
-
-        .nav-container {
-            width: 85%;
-            margin: auto;
-        }
-
-        .main-nav ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            justify-content: flex-start;
-        }
-
-        .main-nav ul li {
-            position: relative;
-        }
-
-        .main-nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 20px;
-            display: block;
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .main-nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .main-nav .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .main-nav .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-transform: none;
-            font-size: 14px;
-        }
-
-        .main-nav .dropdown-content a:hover {
-            background-color: #f1f1f1;
-            color: #0a0a2e;
-        }
-
-        .main-nav li:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-toggle::after {
-            display: inline-block;
-            margin-left: 5px;
-            vertical-align: middle;
-            content: "";
-            border-top: 0.3em solid;
-            border-right: 0.3em solid transparent;
-            border-left: 0.3em solid transparent;
-        }
-
-        /* Container for track content */
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .title {
-            text-align: center;
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            color: #1a237e;
-            font-size: 50px;
-            margin-bottom: 30px;
-        }
-
-        .title h2::after {
-            content: '';
-            position: absolute;
-            width: 175px;
-            height: 3px;
-            background-color: #f44336;
-            bottom: -9px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .track-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .event li {
-            font-weight: normal;
-            line-height: 40px;
-        }
-
-        .event {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            text-align: left;
-        }
-
-        .event:hover {
-            transform: translateY(-5px);
-        }
-
-        .event h3 {
-            color: #0d47a1;
-            margin-bottom: 10px;
-        }
-
-        .event p {
-            color: #555;
-        }
-
-        .event .details {
-            font-size: 14px;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        footer {
-            background: #1e1e1e;
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            padding: 4rem 0;
-            /* width: 100%; */
-            margin: -8px;
-            /* box-sizing: border-box; */
-        }
-
-        .footer-container {
-            max-width: 100%;
-            width: 100%;
-            margin: 0;
-            padding: 2rem 5%;
-            box-sizing: border-box;
-        }
-
-        .footer-grid {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-            width: 100%;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .footer-title {
-            color: white;
-        }
-
-        .footer-title {
-
-            color: white;
-            font-size: 18px;
-            margin-bottom: 15px;
-            font-weight: bold;
-
-        }
-
-        .footer-title::after {
-            content: '';
-            width: 90px;
-            height: 4px;
-            background: yellow;
-            display: block;
-            margin: 8px 0;
-            margin-left: 4px;
-        }
-
-        .footer-text {
-            color: #ccc;
-            line-height: 1.6;
-        }
-
-        .footer-links a {
-            display: block;
-            color: #ccc;
-            text-decoration: none;
-            transition: all 0.3s ease-in-out;
-            font-size: 1rem;
-            padding: 5px 0;
-        }
-
-        .footer-links a:hover {
-            color: #f44336;
-        }
-
-        .footer-social a {
-            margin: 0 10px;
-            color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s ease-in-out;
-            display: inline-block;
-        }
-
-        .footer-social a:hover {
-            color: #f44336;
-        }
-
-        .footer-bottom {
-            margin-top: 3rem;
-            border-top: 2px solid rgba(255, 255, 255, 0.2);
-            padding-top: 1.5rem;
-            font-size: 0.9rem;
-            text-align: center;
-            width: 100%;
-        }
-
-        /* Ensure no margins or padding on body/html affect the footer */
-        /* html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        overflow-x: hidden;
-    } */
-
-        /* Responsive adjustments */
-        @media (max-width: 992px) {
-            .logo-container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .logo-text {
-                margin-bottom: 20px;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .logo-images {
-                justify-content: center;
-            }
-
-            .main-nav ul {
-                flex-direction: column;
-            }
-
-            .main-nav .dropdown-content {
-                position: static;
-                box-shadow: none;
-                padding-left: 20px;
-            }
-
-            .container,
-            .nav-container,
-            .logo-container {
-                width: 95%;
-            }
-        }
-    </style>
+    <title>Conference Tracks - I-LIPS 2025</title>
 </head>
 
 <body>
-    <!-- Top Bar -->
-    <div class="top-bar">
-        I-LIPS 2025 - December 12-14, 2025 - JECRC Foundation, Jaipur
-    </div>
+    <!-- Header will be loaded here -->
+    <div id="header"></div>
 
-    <!-- Logo Bar -->
-    <div class="logo-bar">
-        <div class="logo-container">
-            <div class="logo-text">
-                <div class="logo-title">I-LIPS <span>2025</span></div>
-                <div class="logo-subtitle">
-                    <span>12th International Library Information Professional Summit</span>
-                    <span>Innovative Technologies in Librarianship: Challenges and Opportunities</span>
-                </div>
-            </div>
-            <div class="logo-images">
-                <img src="/images/3.png" alt="JECRC Foundation Logo">
-                <img src="/images/2.png" alt="25 Years Logo">
-                <img src="/images/4.png" alt="JECRC Medical College and Hospital Logo">
-            </div>
+    <div class="main-content">
+        <div class="line">
+            <h1>Conference Tracks</h1>
         </div>
-    </div>
 
-    <!-- Colorful Header Line -->
-    <div class="header-line"></div>
-
-    <!-- Main Navigation Bar -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <ul>
-                <li>
-                    <a href="index.html" class="dropdown-toggle">HOME</a>
-                    <div class="dropdown-content">
-                        <a href="About.html">About JECRC</a>
-                        <a href="vene.html">Venue</a>
-                        <a href="aim.html">Aim & Objectives</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" class="dropdown-toggle">AUTHORS</a>
-                    <div class="dropdown-content">
-                        <a href="call.html">Call for Papers</a>
-                        <a href="author.html">Author Guidelines & Submission</a>
-                        <a href="registration.html">Registration Details</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" class="dropdown-toggle">COMMITTEES</a>
-                    <div class="dropdown-content">
-                        <a href="#">Conference organizer & Boards</a>
-                        <a href="advisory.html">Advisory Chairs</a>
-                        <a href="patron.html">Patron/General Chair</a>
-                        <a href="pcchair.html">PC Chairs Convenor</a>
-                        <a href="organising.html">Organizing Secretary/Co Convernor</a>
-                        <a href="committee.html">Organizing Committee</a>
-                        <a href="national.html">National Program Committee</a>
-                        <a href="internationl.html">International Program Committee</a>
-                    </div>
-                </li>
-                <li>
-                    <a href="#" class="dropdown-toggle">INVITEES</a>
-                    <div class="dropdown-content">
-                        <a href="eminent-guest.html">Eminent Guest</a>
-                        <a href="#">Special Invitees</a>
-                    </div>
-                </li>
-                <li><a href="track.html">CONFERENCE TRACKS</a></li>
-                <li><a href="program.html">PROGRAMS</a></li>
-                <li><a href="speaker.html">KEYNOTE SPEAKERS</a></li>
-                <li><a href="contactus.html">CONTACT US</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
+        <!-- Tracks Section -->
     <div class="container">
-        <div class="title">
             <h2>Conference Tracks</h2>
-        </div>
-        <div class="track-container">
-            <div class="event">
-                <h3>Digital Archiving and Preservation</h3>
-                <ul>
-                    <li>Strategies for archiving and ensuring the longevity of digital resources.</li>
-                    <li>Crowd sourcing for Cultural Heritage Preservation.</li>
-                    <li>Challenges and opportunities in preserving digital collections.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>Data Management and Analytics</h3>
-                <ul>
-                    <li>Big Data and its Implications for Libraries.</li>
-                    <li>Data Privacy and Security in Digital Libraries.</li>
-                    <li>Analytics for Decision-Making in library management.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>Artificial Intelligence (AI) in Libraries</h3>
-                <ul>
-                    <li>Explore the integration of AI for information retrieval and user assistance.</li>
-                    <li>Discuss ethical considerations and challenges related to AI implementation in libraries.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>User Experience and Interface Design</h3>
-                <ul>
-                    <li>Explore innovative technologies to enhance user experience in library services.</li>
-                    <li>Challenges in designing user-friendly interfaces for digital resources.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>Ethical Considerations in Innovative Technologies</h3>
-                <ul>
-                    <li>Ethical Use of AI in Libraries.</li>
-                    <li>Privacy and Intellectual Freedom in the Digital Age.</li>
-                    <li>Balancing Technological Innovation and Ethical Responsibilities.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>Blockchain and Library Transactions</h3>
-                <ul>
-                    <li>Use of blockchain for secure transactions in libraries.</li>
-                    <li>Challenges in the adoption of blockchain technology in library systems.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>Cybersecurity in Libraries</h3>
-                <ul>
-                    <li>Importance of cybersecurity in protecting digital assets.</li>
-                    <li>Challenges and strategies for ensuring the security of library systems.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>Open Access and Open Educational Resources (OER)</h3>
-                <ul>
-                    <li>Strategies for archiving and ensuring the longevity of digital resources.</li>
-                    <li>Crowd sourcing for Cultural Heritage Preservation.</li>
-                    <li>Challenges and opportunities in preserving digital collections.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>Digital Literacy and Information Literacy Programs</h3>
-                <ul>
-                    <li>Discuss how libraries use technology to promote digital literacy.</li>
-                    <li>Explore challenges in developing effective information literacy programs in a digital age.</li>
-                    <li>Teaching Information Literacy in the age of Fake News.</li>
-                    <li>Lifelong Learning and Libraries.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>Augmented Reality (AR) and Virtual Reality (VR) in Libraries</h3>
-                <ul>
-                    <li>Explore applications of AR and VR for enhancing library services.</li>
-                    <li>AR and VR in Library Spaces.</li>
-                    <li>Gamification for Library Engagement.</li>
-                    <li>Challenges and opportunities in implementing immersive technologies.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>Mobile Technologies and Library Services</h3>
-                <ul>
-                    <li>Mobile applications in providing library services.</li>
-                    <li>Challenges in developing mobile-friendly resources and interfaces.</li>
-                    <li>Users can renew books and reserve titles remotely.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>Collaborative Technologies for Knowledge Sharing</h3>
-                <ul>
-                    <li>Tools and technologies that facilitate collaboration among libraries.</li>
-                    <li>Challenges in promoting knowledge sharing through collaborative platforms.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>Assistive Technologies and Inclusivity</h3>
-                <ul>
-                    <li>Assistive Technologies in Libraries.</li>
-                    <li>Designing Inclusive Library Spaces.</li>
-                    <li>Accessibility of Digital Resources for Diverse users.</li>
-                </ul>
-            </div>
-
-            <div class="event">
-                <h3>Internet of Things (IoT) in Library Spaces</h3>
-                <ul>
-                    <li>IoT functionality of library spaces.</li>
-                    <li>Challenges and considerations in implementing IoT technologies.</li>
-                </ul>
-            </div>
+            <table>
+                <tr>
+                    <th>Sr. No</th>
+                    <th>Track</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Digital Libraries and Information Systems</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Knowledge Management and Organization</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Information Retrieval and Access</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Library Automation and Technology</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Information Literacy and Education</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Digital Preservation and Archiving</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Open Access and Scholarly Communication</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Information Ethics and Privacy</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Social Media and Information Sharing</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Data Science and Analytics in Libraries</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>User Experience and Information Design</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Information Policy and Governance</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>Digital Humanities and Cultural Heritage</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Information Services and Reference</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>Library Management and Administration</td>
+                </tr>
+            </table>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h2 class="footer-title">About the Conference</h2>
-                    <p class="footer-text">Join us for an unforgettable experience featuring industry leaders,
-                        thought-provoking discussions, and unparalleled networking opportunities.</p>
-                </div>
-                <div class="footer-section">
-                    <h2 class="footer-title">Quick Links</h2>
-                    <div class="footer-links">
-                        <a href="index.html">Home</a>
-                        <a href="program.html">Schedule</a>
-                        <a href="speaker.html">Speakers</a>
-                        <a href="#">Sponsors</a>
-                        <a href="contactus.html">Contact</a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h2 class="footer-title">Contact Us</h2>
-                    <p class="footer-text">📧 Email: icetsl@jecrc.ac.in</p>
-                    <p class="footer-text">📞 Phone: +91 9829230353, +91 7976196689</p>
-                    <p class="footer-text">📍 Location: JECRC Foundation, Jaipur, Rajasthan</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-                <p>&copy; 2025 I-LIPS Conference. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer will be loaded here -->
+    <div id="footer"></div>
 
-    <!-- JavaScript to handle dropdowns on mobile -->
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // For mobile toggle
-            const toggles = document.querySelectorAll('.dropdown-toggle');
-
-            if (window.innerWidth <= 992) {
-                toggles.forEach(toggle => {
-                    toggle.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const dropdownContent = this.nextElementSibling;
-                        if (dropdownContent.style.display === 'block') {
-                            dropdownContent.style.display = 'none';
-                        } else {
-                            dropdownContent.style.display = 'block';
-                        }
-                    });
-                });
-            }
+        $(document).ready(function() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
         });
     </script>
 </body>
 
 </html>
+
+
