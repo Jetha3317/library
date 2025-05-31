@@ -102,6 +102,9 @@ body {
     margin-bottom: 0.25rem;
     color: #0d47a1;
 }
+.num{
+    margin-bottom: 0px;
+}
 
 /* Map Container */
 .map-container {
