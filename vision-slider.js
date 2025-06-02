@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add audio effect
         const audio = new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3');
-        audio.volume = 0.2;
+        audio.volume = 1.1;
         audio.play().catch(e => console.log('Audio play failed:', e));
 
         // Add enhanced particle effects
