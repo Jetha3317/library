@@ -44,11 +44,18 @@ header {
 
 /* Logo and Title Container */
 .header-container {
+    width: 100%;
+    padding: 20px 40px;
+    background-color: #ffecb3c1;
+    position: relative;
+}
+
+.header-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 40px;
-    background-color: #f5f5f5;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Logo Section */
@@ -68,18 +75,41 @@ header {
 }
 
 .logo {
-    font-size: 36px;
     font-weight: 700;
     color: #1a237e;
     margin-right: 20px;
-    line-height: 1;
     position: relative;
     transition: all 0.3s ease;
-    white-space: nowrap;
+    text-align: center;
 }
 
 .logo:hover {
     transform: translateY(-2px);
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-main {
+    font-size: 36px;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.logo-year {
+    font-size: 28px;
+    color: rgba(244, 67, 54);
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.logo:hover .logo-year {
+    color: #b71c1c;
 }
 
 .logo span {
@@ -100,7 +130,7 @@ header {
     display: flex;
     flex-direction: column;
     font-size: 18px;
-    color: #455a64;
+    color:black;
     margin-top: 5px;
     transition: color 0.3s ease;
 }
@@ -278,6 +308,15 @@ header {
 
 /* Mobile Responsiveness */
 @media screen and (max-width: 992px) {
+    .header-container {
+        padding: 15px 20px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
     .logo-container {
         flex-direction: column;
         text-align: center;
