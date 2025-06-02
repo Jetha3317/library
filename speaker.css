@@ -11,9 +11,10 @@ body {
 }
 
 /* Main Content Styles */
-.main-content {
-    padding: 30px 0;
-    padding-top: 200px;
+.speakers {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: calc(100vh - 200px);
 }
 
 .line {
@@ -43,7 +44,7 @@ body {
 
 .container {
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
@@ -52,6 +53,34 @@ body {
     font-size: 30px;
     margin-bottom: 20px;
     text-align: center;
+}
+
+/* Section Title Styles */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 50px;
+    color: #1a237e;
+    padding: 40px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    margin: 0;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: #f44336;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Speakers Grid */
@@ -121,16 +150,13 @@ body {
 
 /* Responsive Adjustments */
 @media (max-width: 992px) {
-    .main-content {
-        padding-top: 180px;
+    .speakers {
+        padding: 60px 0;
     }
 
-    .line h1 {
+    .section-title h2 {
         font-size: 40px;
-    }
-
-    .line h1::after {
-        width: 300px;
+        padding: 35px 0;
     }
 
     .speakers-grid {
@@ -139,20 +165,13 @@ body {
 }
 
 @media (max-width: 768px) {
-    .main-content {
-        padding-top: 160px;
+    .speakers {
+        padding: 40px 0;
     }
 
-    .line h1 {
-        font-size: 32px;
-    }
-
-    .line h1::after {
-        width: 250px;
-    }
-
-    .container h2 {
-        font-size: 24px;
+    .section-title h2 {
+        font-size: 36px;
+        padding: 30px 0;
     }
 
     .speakers-grid {
@@ -162,20 +181,13 @@ body {
 }
 
 @media (max-width: 576px) {
-    .main-content {
-        padding-top: 140px;
+    .speakers {
+        padding: 30px 0;
     }
 
-    .line h1 {
+    .section-title h2 {
         font-size: 28px;
-    }
-
-    .line h1::after {
-        width: 200px;
-    }
-
-    .container {
-        padding: 0 15px;
+        padding: 25px 0;
     }
 
     .speakers-grid {
