@@ -1,0 +1,150 @@
+/* Grid layout for speakers */
+.speakers-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 50px;
+    color: #1a237e;
+    padding: 40px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    margin: 0;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: #f44336;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Speaker/developer card design */
+.speaker-card {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.speaker-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Speaker photo */
+.speaker-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-top: 1.5rem;
+  object-fit: cover;
+  border: 5px solid #0077b5;
+}
+
+/* Name styling */
+.speaker-info h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Social link buttons hidden by default */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+/* Reveal social links on hover */
+.speaker-card:hover .social-links {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Social link buttons style */
+.social-links a {
+  text-decoration: none;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+}
+
+/* LinkedIn styling */
+.social-links .linkedin {
+  background-color: #0077b5;
+}
+
+.social-links .linkedin:hover {
+  background-color: #005a8c;
+}
+
+/* GitHub styling */
+.social-links .github {
+  background-color: #24292e;
+}
+
+.social-links .github:hover {
+  background-color: #000;
+}
+
+/* Table styling for Library Team */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+th {
+  background: #1a237e;
+  color: white;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+tr:hover {
+  background: #d1e7fd;
+  transition: 0.3s;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .speaker-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}
