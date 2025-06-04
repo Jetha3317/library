@@ -24,14 +24,14 @@ document.addEventListener('DOMContentLoaded', function() {
         slides[currentSlide].classList.add('active');
         dots[currentSlide].classList.add('active');
 
-        // Add audio effect
-        const audio = new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3');
-        audio.volume = 1.1;
-        audio.play().catch(e => console.log('Audio play failed:', e));
+        // // Add audio effect
+        // const audio = new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3');
+        // audio.volume = 1.1;
+        // audio.play().catch(e => console.log('Audio play failed:', e));
 
-        // Add enhanced particle effects
-        createParticles();
-        createRippleEffect();
+        // // Add enhanced particle effects
+        // createParticles();
+        // createRippleEffect();
 
         // Reset animation flag after transition
         setTimeout(() => {
