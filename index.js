@@ -33,6 +33,8 @@ async function includeHTML(id, file) {
             // Initialize any custom components or event listeners
             if (id === 'header') {
                 initializeHeader();
+            } else if (id === 'mobile-header') {
+                initializeMobileHeader();
             } else if (id === 'footer') {
                 initializeFooter();
             }
@@ -84,6 +86,14 @@ function initializeHeader() {
     });
 }
 
+// Initialize mobile header functionality
+function initializeMobileHeader() {
+    // Load mobile header JavaScript
+    const script = document.createElement('script');
+    script.src = 'mob-header.js';
+    document.body.appendChild(script);
+}
+
 // Initialize footer-specific functionality
 function initializeFooter() {
     // Add any footer-specific initialization here
@@ -100,9 +110,10 @@ function initializeFooter() {
 // Load components when the DOM is ready
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        // Load header and footer in parallel
+        // Load headers and footer in parallel
         await Promise.all([
             includeHTML('header', 'header.html'),
+            includeHTML('mobile-header', 'mob-header.html'),
             includeHTML('footer', 'footer.html')
         ]);
 
