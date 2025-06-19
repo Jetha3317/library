@@ -134,7 +134,7 @@ header {
     flex-direction: column;
     font-size: 18px;
     color:black;
-    margin-top: 5px;
+    margin-top: 28px;
     transition: color 0.3s ease;
 }
 
@@ -284,7 +284,6 @@ header {
 }
 
 .dropdown-item::before {
-    content: '';
     position: absolute;
     left: 0;
     top: 0;
