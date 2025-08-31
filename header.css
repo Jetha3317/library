@@ -68,7 +68,7 @@ header {
     align-items: center;
     padding: 15px 0;
     transition: transform 0.3s ease;
-    gap: 30px;
+    gap: 20px;
 }
 
 .logo-text-container {
@@ -78,7 +78,7 @@ header {
 }
 
 .logo {
-    font-weight: 700;
+    font-weight: 600;
     color: #1a237e;
     margin-right: 20px;
     position: relative;
@@ -98,8 +98,8 @@ header {
     align-items: center;
 }
 
-.logo-main {
-    font-size: 36px;
+/* .logo-main {
+    font-size: 3px;
     line-height: 1;
     margin-bottom: 5px;
 }
@@ -109,9 +109,9 @@ header {
     color: rgba(244, 67, 54);
     line-height: 1;
     transition: color 0.3s ease;
-}
+} */
 
-.logo:hover .logo-year {
+.logo:hover .logo {
     color: #b71c1c;
 }
 
@@ -132,7 +132,7 @@ header {
 .subtitle {
     display: flex;
     flex-direction: column;
-    font-size: 18px;
+    font-size: 17px;
     color:black;
     margin-top: 28px;
     transition: color 0.3s ease;
@@ -143,7 +143,7 @@ header {
 }
 
 .subtitle span {
-    line-height: 1.4;
+    line-height: 1.2;
 }
 
 /* Images on Right Side of Logo */
@@ -155,7 +155,7 @@ header {
 }
 
 .logo-images img {
-    height: 65px;
+    height: 60px;
     transition: transform 0.3s ease;
 }
 
@@ -325,7 +325,7 @@ header {
     }
 
     .logo-text-container {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     .logo {
@@ -333,7 +333,7 @@ header {
     }
 
     .subtitle {
-        font-size: 16px;
+        font-size: 10px;
     }
 
     .logo-images {

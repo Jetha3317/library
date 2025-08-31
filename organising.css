@@ -35,23 +35,27 @@ body {
     display: grid;
     justify-self: center;
     grid-template-columns: 1fr;
+    width: 90%;
     gap: 30px;
     margin-top: 30px;
     padding: 20px;
-    margin-left: 20%;
-    margin-right: 20%;
-    /* max-width: 300px; */
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 400px;
 }
 
 /* Co Convenor section styling */
 .speakers:last-of-type .speakers-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+     justify-self: center;
+     grid-template-columns: repeat(3, 1fr);
+    width: 90%;
     gap: 30px;
     margin-top: 30px;
     padding: 20px;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 1200px;
 }
 
 .speaker-card {
