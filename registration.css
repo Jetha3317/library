@@ -48,6 +48,22 @@ h4 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.downloads {
+display: inline-block;
+flex-wrap: wrap;
+padding: 0;
+}   
+.cta-button {
+    display: inline-block;
+    background-color: rgba(244, 67, 54);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
 
 .fee-table {
     width: 100%;

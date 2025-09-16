@@ -168,7 +168,7 @@ footer {
 }
 
 .footer-social a:hover::before {
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 .footer-bottom {
