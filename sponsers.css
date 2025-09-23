@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+figcaption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -9,18 +17,23 @@ body {
 }
 
 /* Sponsers Section */
+
+.sponser-image img{
+    height: 100px;
+    transition: transform 0.3s ease
+}
 .sponsers-collab-text {
     justify-content: center !important;
     align-items: center !important;
     flex: 1;
-    /* margin: 20px 15px 20px; */
+    /* margin: 20px 15px 200px; */
     max-width: 1600px;
     transition: transform 0.3s ease;
 }
 .sponsers-collab-section {
     flex: 1;
     min-width: 200px;
-    margin: 0 15px 60px;
+    margin: 0 0px 20px;
     max-width: 2000px;
     transition: transform 0.3s ease;
 }
@@ -151,7 +164,7 @@ body {
 .coming-soon-title {
     font-size: 48px;
     color: #11468F;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -162,7 +175,7 @@ body {
     width: 100px;
     height: 4px;
     background: linear-gradient(90deg, #11468F, #3498db);
-    margin: 20px auto;
+    margin: 10px auto;
     border-radius: 2px;
     animation: expandWidth 1s ease-out;
 }
