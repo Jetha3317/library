@@ -44,6 +44,7 @@ body {
     min-height: calc(100vh - 200px);
     display: flex;
     align-items: center;
+    text-align: justify;
 }
 
 .section-title {
