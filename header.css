@@ -155,8 +155,21 @@ header {
 }
 
 .logo-images img {
-    height: 60px;
+    height: 70px;
     transition: transform 0.3s ease;
+}
+
+.logo-jecrc {
+    width: 110px; 
+}
+.logo-25 {
+    width: 100px;
+}
+.logo-jmch {
+    width: 100px;
+}
+.logo-ju {
+    width: 120px;
 }
 
 .logo-images img:hover {
